@@ -892,32 +892,27 @@
 					<div class="contact-form p-4 shadow-lg rounded" style="background:#111; color:#fff;">
 						<h2 class="text-center mb-4">Let's Connect!</h2>
 						<form id="contactForm">
-							<div class="form-group mb-3">
-								<label for="from_name">Name</label>
-								<input type="text" class="form-control" id="from_name" name="from_name"
-									placeholder="Enter your name" required>
-							</div>
-							<div class="form-group mb-3">
-								<label for="from_email">Email</label>
-								<input type="email" class="form-control" id="from_email" name="from_email"
-									placeholder="Enter your email" required>
-							</div>
-							<div class="form-group mb-3">
-								<label for="subject">Subject</label>
-								<input type="text" class="form-control" id="subject" name="subject"
-									placeholder="Subject" required>
-							</div>
-							<div class="form-group mb-4">
-								<label for="message">Message</label>
-								<textarea class="form-control" id="message" name="message" rows="5"
-									placeholder="Write your message here..." required></textarea>
-							</div>
-							<div class="text-center">
-								<button type="submit" class="btn btn-primary btn-lg px-5">
-									Send Message <span class="icon-paper-plane ml-2"></span>
-								</button>
-							</div>
-						</form>
+  <div class="form-group mb-3">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="time">Time</label>
+    <input type="text" class="form-control" id="time" name="time" value="" readonly>
+  </div>
+
+  <div class="form-group mb-4">
+    <label for="message">Message</label>
+    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary btn-lg px-5">
+      Send Message <span class="icon-paper-plane ml-2"></span>
+    </button>
+  </div>
+</form>
 					</div>
 				</div>
 			</div>
@@ -957,6 +952,7 @@
 		})();
 
 		// Form submission handler
+		document.getElementById("time").value = new Date().toLocaleString();
 		document.getElementById('contactForm').addEventListener('submit', function (event) {
 			event.preventDefault();
 
